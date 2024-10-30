@@ -1,10 +1,26 @@
 {
+  "name": "your-app-name",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "start:dev": "ts-node server.ts",
+    "build": "tsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest -w=1 --coverage --detectOpenHandles"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.1",
-    "socket.io": "^4.7.5"
+    "socket.io": "^4.7.5",
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
@@ -29,15 +45,6 @@
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.3",
-    "dotenv": "^16.4.5"
-  },
-  "scripts": {
-    "start": "ts-node server.ts",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "test": "jest -w=1 --coverage --detectOpenHandles",
-    "build" : "tsc",
-    "start:prod" : "node ./dist/server.js"
+    "typescript": "^5.5.3"
   }
 }
